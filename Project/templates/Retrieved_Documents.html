@@ -1,0 +1,41 @@
+<html>
+<head>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+</head>
+<body>
+
+
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Results </h1>
+      <br>
+<h6 class="card-subtitle mb-2 text-muted">Include: {{do}}</h6>
+<br>
+          <h6 class="card-subtitle mb-2 text-muted">Exclude: {{donot}}</h6>
+<br>
+          <h6 class="card-subtitle mb-2 text-muted">Total Recipes: {{total}}</h6>
+  </div>
+</div>
+
+<ul class="list-unstyled">
+        {% for key in list %}
+          <li class="media">
+              <img class="align-self-center mr-3 img-fluid img-thumbnail" src="{{ url_for('static', filename=key[3])}}" alt="Generic placeholder image">
+              <div class="media-body">
+                <h5 class="mt-0 mb-1">{{key[0]}}</h5>
+                  <h6 class="mt-0 mb-1">Ingredients:</h6>
+                <p> {{key[1]}} </p>
+                  <h6 class="mt-0 mb-1">Instructions:</h6>
+                <p> {{key[2]}} </p>
+              </div>
+          </li>
+    <br>
+              <br>
+              <br>
+        {% endfor %}
+</ul>
+</body>
+</html>
+
